@@ -38,7 +38,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        bat 'dotnet publish eShopOnWeb.sln -c Release -o "C:\\publish\\aspnet" --no-build'
+        bat '@echo off echo === DEPLOYMENT DES PROJETS INDIVIDUELS ===  echo Publication de Web... dotnet publish src\\Web\\Web.csproj -c Release -o "C:\\publish\\aspnet\\Web" --no-build  echo Publication de PublicApi... dotnet publish src\\PublicApi\\PublicApi.csproj -c Release -o "C:\\publish\\aspnet\\PublicApi" --no-build  echo Publication de BlazorAdmin... dotnet publish src\\BlazorAdmin\\BlazorAdmin.csproj -c Release -o "C:\\publish\\aspnet\\BlazorAdmin" --no-build  echo === DEPLOYMENT TERMINEE ==='
       }
     }
 
