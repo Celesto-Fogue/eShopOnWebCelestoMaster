@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        bat 'dotnet restore eShopOnWeb.sln --verbosity normal dotnet build eShopOnWeb.sln -c Release --no-restore'
+        bat 'dotnet restore eShopOnWeb.sln --verbosity normal && dotnet build eShopOnWeb.sln -c Release --no-restore'
       }
     }
 
